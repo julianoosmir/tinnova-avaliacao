@@ -42,14 +42,14 @@ public class VeiculoService {
     }
 
     @Transactional
-    public void salvar(VeiculoInputDTO veiculodto){
+    public void salvar(VeiculoInputDTO veiculodto) {
         Veiculo veiculo = Veiculo.fromInput(veiculodto);
         veiculo.setPreco(cotacaoDolarService.buscarCotacaoDolar(veiculo.getPreco()));
         this.veiculoRepository.persist(veiculo);
     }
 
     @Transactional
-    public void alterar(UUID uuid, VeiculoInputDTO veiculodto){
+    public void alterar(UUID uuid, VeiculoInputDTO veiculodto) {
         Veiculo veiculo = this.veiculoRepository.findByIdOptional(uuid)
                 .orElseThrow(() -> new EntityNotFoundException("veiculo não encontrado"));
 
