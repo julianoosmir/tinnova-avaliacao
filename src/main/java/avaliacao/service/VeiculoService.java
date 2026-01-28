@@ -1,5 +1,6 @@
 package avaliacao.service;
 
+import avaliacao.dto.MarcaCountDTO;
 import avaliacao.dto.VeiculoInputDTO;
 import avaliacao.dto.VeiculoInputSeachDTO;
 import avaliacao.dto.VeiculoOutputDTO;
@@ -25,6 +26,10 @@ public class VeiculoService {
                .stream()
                .map(Veiculo::toOutput)
                .toList();
+    }
+
+    public List<MarcaCountDTO> relatorioMarcas(int page, int pageSize) {
+        return this.veiculoRepository.relatorioMarcas(page,pageSize);
     }
 
     public VeiculoOutputDTO buscarPorId(UUID id) {

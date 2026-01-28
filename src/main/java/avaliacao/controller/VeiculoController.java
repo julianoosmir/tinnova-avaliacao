@@ -28,6 +28,13 @@ public class VeiculoController {
         return Response.ok(this.veiculoService.buscarPorId(UUID.fromString(id))).build();
     }
 
+    @GET
+    @Path("/relatorios/por-marca")
+    public Response relatoriosPorMarca(@QueryParam("page") @DefaultValue("0") int page,
+                                       @QueryParam("pageSize") @DefaultValue("10") int pageSize){
+        return Response.ok(this.veiculoService.relatorioMarcas(page,pageSize)).build();
+    }
+
     @POST
     public Response salvarVeiculo(VeiculoInputDTO veiculoInputDTO){
         this.veiculoService.salvar(veiculoInputDTO);

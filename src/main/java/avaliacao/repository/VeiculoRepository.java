@@ -1,5 +1,6 @@
 package avaliacao.repository;
 
+import avaliacao.dto.MarcaCountDTO;
 import avaliacao.dto.VeiculoInputSeachDTO;
 import avaliacao.entity.Veiculo;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
@@ -16,6 +17,14 @@ public class VeiculoRepository implements PanacheRepositoryBase<Veiculo, UUID> {
 
     public List<Veiculo> buscarTodos(int pageIndex, int pageSize) {
         return find("from Veiculo").page(Page.of(pageIndex,pageSize)).list();
+    }
+
+    public List<MarcaCountDTO> relatorioMarcas(int pageIndex, int pageSize) {
+        return Veiculo.find(
+                "select v.marca, count(v)" +
+                        "from Veiculo v " +
+                        "group by v.marca"
+        ).page(Page.of(pageIndex,pageSize)).project(MarcaCountDTO.class).list();
     }
 
     public List<Veiculo> buscarPorParametros(VeiculoInputSeachDTO dto,int page, int pageSize) {
