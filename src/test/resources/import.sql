@@ -11,6 +11,6 @@ VALUES (0x93ea4ce0a23b4b0aba4e99f4d89d0f92, 'teste@teste.com', 'usuario', '$1234
         'usuario',0x6AE6FFD34E7ACC448A5E6FE629047B6D);
 
 INSERT INTO Veiculo (ativo, preco, id, ano, cor, marca, placa)
-       VALUES (true, 19.33, 0xD218FBA826D6436FA0B36067F78A8EC6, '2013', 'preto', 'gol', 'zap34');
+VALUES (true, 19.33, 0xD218FBA826D6436FA0B36067F78A8EC6, '2013', 'preto', 'gol', 'zap34');
 INSERT INTO Veiculo (ativo, preco, id, ano, cor, marca, placa)
-VALUES (true, 19.33, 0xbcd6ec9438bb4b85b06884c623252d5b, '2013', 'azul', 'gol', 'zap35');
+VALUES (true, 19.33, 0xbcd6ec9438bb4b85b06884c623252d5b, '2013', 'branco', 'gol', 'zap35');

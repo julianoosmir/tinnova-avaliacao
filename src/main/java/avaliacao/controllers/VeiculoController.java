@@ -1,4 +1,4 @@
-package avaliacao.controller;
+package avaliacao.controllers;
 
 import avaliacao.dto.VeiculoInputDTO;
 import avaliacao.dto.VeiculoInputSeachDTO;

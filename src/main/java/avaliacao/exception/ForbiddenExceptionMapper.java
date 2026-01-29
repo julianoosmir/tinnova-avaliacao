@@ -2,7 +2,7 @@ package avaliacao.exception;
 
 import avaliacao.dto.ErroResponse;
 import jakarta.annotation.Priority;
-import jakarta.ws.rs.ForbiddenException;
+import io.quarkus.security.ForbiddenException;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
